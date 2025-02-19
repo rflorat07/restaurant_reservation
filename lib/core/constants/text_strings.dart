@@ -2,5 +2,5 @@ class TTexts {
   TTexts._();
 
   // -- Splash Texts
-  static const String splash = 'Table Reservation';
+  static const String splashTitle = 'Table Reservation';
 }
