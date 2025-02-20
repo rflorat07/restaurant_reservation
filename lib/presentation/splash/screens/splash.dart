@@ -16,16 +16,11 @@ class SplashScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             ClipRRect(
-              borderRadius: BorderRadius.circular(
-                TSizes.size68 / 2,
-              ), // Radio = mitad del ancho/alto
+              borderRadius: BorderRadius.circular(TSizes.size68 / 2),
               child: SizedBox(
                 width: TSizes.size68,
                 height: TSizes.size68,
-                child: Image.asset(
-                  TImages.splashLogo,
-                  fit: BoxFit.cover,
-                ), // Asegúrate de que la imagen exista y ajusta la ruta.
+                child: Image.asset(TImages.splashLogo, fit: BoxFit.cover),
               ),
             ),
             Text(

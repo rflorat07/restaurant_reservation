@@ -3,8 +3,8 @@
 ## Restaurant Table Booking App Kit Screens List:
 
 * Splash Screen
-* Onboarding Screens
 * Welcome Screen
+* Onboarding Screens
 * Sign In, Create an Account, Verify the Code and new Password, and Complete Your Profile Screens
 * Allow Location Access, Enter Your Location, Enable Notification Access Screens
 * Home Screen Screen

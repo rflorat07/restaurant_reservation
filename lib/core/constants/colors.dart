@@ -3,13 +3,16 @@ import 'package:flutter/material.dart';
 class TColors {
   TColors._();
   // App Basic Colors
-  static const Color primary = Color(0xFF4C9580);
-  static const Color secondary = Color(0xFF242424);
+  static const Color primary = Color(0xFF5B4CBD);
+  static const Color secondary = Color(0xFFE24701);
+  static const Color tertiary = Color(0xFF242424);
+  static const Color quaternary = Color(0xFF797979);
+  static const Color quinary = Color(0xFFF6F6F6);
 
   // Text Colors
   static const Color textPrimary = Color(0xFF242424);
   static const Color textSecondary = Color(0xFF797979);
-  static const Color textWhite = Colors.white;
+  static const Color textWhite = Color(0xFFF6F6F6);
 
   // Background Colors
   static const Color light = Color(0xFFF6F6F6);
@@ -19,11 +22,6 @@ class TColors {
   // Background Container Colors
   static const Color lightContainer = Colors.white;
   static Color darkContainer = Colors.white.withValues(alpha: 0.1);
-
-  // Button Colors
-  static const Color buttonPrimary = Color(0xFF4C9580);
-  static const Color buttonSecondary = Color(0xFFF6F6F6);
-  static const Color buttonDisabled = Color(0xFFC4C4C4);
 
   // Border Colors
   static const Color borderPrimary = Color.fromRGBO(0, 0, 0, 0.1);
