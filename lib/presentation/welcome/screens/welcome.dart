@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import '../../../common/common.dart';
 import '../../../core/constants/constants.dart';
 import '../../../core/helpers/helpers.dart';
+import '../../../core/navigator/app_navigator.dart';
+import '../../onboarding/screens/onboarding.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -31,7 +33,11 @@ class WelcomeScreen extends StatelessWidget {
                 ),
                 TBasicElevatedButton(
                   title: TTexts.welcomeButton,
-                  onPressed: () {},
+                  onPressed:
+                      () => AppNavigator.pushAndRemove(
+                        context,
+                        OnboardingScreen(),
+                      ),
                 ),
                 TRichTextTap(text: TTexts.welcomeSignIn, onTap: () {}),
               ],

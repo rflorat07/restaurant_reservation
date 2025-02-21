@@ -13,6 +13,7 @@ dependencies:
   # Utility Packages
   flutter_svg: ^2.0.1
   cached_network_image: ^3.4.1
+  smooth_page_indicator: ^1.2.0+3
 
   # Icons
   iconsax_plus: ^1.0.0
@@ -37,3 +38,18 @@ flutter:
     - assets/logos/
     - assets/fonts/
     - assets/images/
+    - assets/images/onboarding/
+  
+#---------- LOCAL FONTS ----------#
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Inter-Medium.ttf
+          weight: 500
+          style: italic
+        - asset: assets/fonts/Inter-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Inter-Bold.ttf
+          weight: 700
