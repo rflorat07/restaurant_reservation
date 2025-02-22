@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/core.dart';
+import '../../auth/screens/signin/signin.dart';
+import '../cubit/onboarding_cubit.dart';
 import '../widgets/widgets.dart';
 
 class OnboardingScreen extends StatelessWidget {
@@ -8,16 +11,41 @@ class OnboardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final pageController = PageController();
     return Scaffold(
-      appBar: OnBoardingSkip(),
+      appBar: OnBoardingSkip(
+        onPressed: () {
+          AppNavigator.pushAndRemove(context, SignInScreen());
+        },
+      ),
       backgroundColor: TColors.quinary,
-      body: Column(
+      body: BlocProvider(
+        create: (context) => OnboardingCubit(),
+        child: OnboardingPage(),
+      ),
+    );
+  }
+}
+
+class OnboardingPage extends StatelessWidget {
+  const OnboardingPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocListener<OnboardingCubit, OnboardingState>(
+      listener: (context, state) {
+        if (state.status == OnBoardingStatus.completed) {
+          AppNavigator.pushAndRemove(context, SignInScreen());
+        }
+      },
+      child: Column(
         children: [
           Flexible(
             child: PageView(
-              controller: pageController,
-              onPageChanged: (index) {},
+              controller: context.read<OnboardingCubit>().pageController,
+              onPageChanged:
+                  (index) => context
+                      .read<OnboardingCubit>()
+                      .updatePageIndicator(index),
               physics: const ClampingScrollPhysics(),
               children: [
                 OnBoardingPage(
@@ -38,28 +66,7 @@ class OnboardingScreen extends StatelessWidget {
               ],
             ),
           ),
-          Container(
-            padding: EdgeInsets.only(
-              left: TSizes.defaultSpace,
-              right: TSizes.defaultSpace,
-              bottom: TDeviceUtils.getBottomNavigationBarHeight(),
-            ),
-            color: TColors.white,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                /// OnBoarding Back Button
-                const OnBoardingBackButton(),
-
-                /// Dot Navigation SmoothPageIndicator
-                OnBoardingDotNavigation(pageController: pageController),
-
-                /// OnBoarding Next Button
-                const OnBoardingNextButton(),
-              ],
-            ),
-          ),
+          const OnBoardingNavigation(),
         ],
       ),
     );

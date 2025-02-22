@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import '../../../core/core.dart';
 
 class OnBoardingSkip extends StatelessWidget implements PreferredSizeWidget {
-  const OnBoardingSkip({super.key});
+  const OnBoardingSkip({super.key, required this.onPressed});
+
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +14,7 @@ class OnBoardingSkip extends StatelessWidget implements PreferredSizeWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24),
           child: TextButton(
-            onPressed: () {},
+            onPressed: onPressed,
             child: Text(
               TTexts.onboardingSkip,
               style: Theme.of(context).textTheme.bodyMedium!.copyWith(

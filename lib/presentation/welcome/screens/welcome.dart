@@ -4,6 +4,7 @@ import '../../../common/common.dart';
 import '../../../core/constants/constants.dart';
 import '../../../core/helpers/helpers.dart';
 import '../../../core/navigator/app_navigator.dart';
+import '../../auth/screens/signin/signin.dart';
 import '../../onboarding/screens/onboarding.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -39,7 +40,11 @@ class WelcomeScreen extends StatelessWidget {
                         OnboardingScreen(),
                       ),
                 ),
-                TRichTextTap(text: TTexts.welcomeSignIn, onTap: () {}),
+                TRichTextTap(
+                  text: TTexts.welcomeSignIn,
+                  onTap:
+                      () => AppNavigator.pushAndRemove(context, SignInScreen()),
+                ),
               ],
             ),
           ),

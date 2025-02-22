@@ -14,11 +14,11 @@ class TTexts {
   // -- OnBoarding Texts
   static const String onboardingSkip = 'Skip';
   static const String onBoardingTitle1 =
-      'Explore *Professional \nServices* Provider';
+      'Discover *Dining Delights* \n&  Exclusive Offers';
   static const String onBoardingTitle2 =
-      'Explore *Services* by \ninteractive Map';
+      'Build *Your Favourite Restaurant* by Collection';
   static const String onBoardingTitle3 =
-      'Engage in a *Conversation \nwith Service Provider*';
+      'Connect Instantly: *Chat \n& Call* with Owners';
 
   static const String onBoardingDescription1 =
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ';
