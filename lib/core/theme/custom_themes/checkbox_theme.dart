@@ -17,7 +17,7 @@ class TCheckboxTheme {
     }),
     fillColor: WidgetStateProperty.resolveWith((states) {
       if (states.contains(WidgetState.selected)) {
-        return TColors.green;
+        return TColors.primary;
       } else {
         return Colors.transparent;
       }

@@ -11,7 +11,7 @@ class TFilledButtonTheme {
           textStyle: WidgetStatePropertyAll(
             TTextTheme.lightTextTheme.titleMedium!.apply(color: TColors.white),
           ),
-          backgroundColor: const WidgetStatePropertyAll(TColors.green),
+          backgroundColor: const WidgetStatePropertyAll(TColors.primary),
         ),
       );
 
@@ -21,7 +21,7 @@ class TFilledButtonTheme {
           textStyle: WidgetStatePropertyAll(
             TTextTheme.lightTextTheme.titleMedium!.apply(color: TColors.white),
           ),
-          backgroundColor: const WidgetStatePropertyAll(TColors.green),
+          backgroundColor: const WidgetStatePropertyAll(TColors.primary),
         ),
       );
 }

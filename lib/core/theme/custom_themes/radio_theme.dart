@@ -10,7 +10,7 @@ class TRadioThemeData {
       Set<WidgetState> states,
     ) {
       if (states.contains(WidgetState.selected)) {
-        return TColors.green;
+        return TColors.primary;
       }
       return TColors.darkerGrey;
     }),
@@ -23,7 +23,7 @@ class TRadioThemeData {
       if (states.contains(WidgetState.disabled)) {
         return TColors.darkerGrey;
       }
-      return TColors.green;
+      return TColors.primary;
     }),
   );
 }

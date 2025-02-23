@@ -39,7 +39,6 @@ class TColors {
   // Neutral Shades Colors
   static const Color black = Color(0xFF242424);
   static const Color darkerGrey = Color(0xFF797979);
-  static const Color green = Color(0xFF4C9580);
   static const Color white = Color(0xFFFFFFFF);
   static const Color yellow = Color(0xFFFFD542);
   static const Color starYellow = Color(0xFFFCBB44);

@@ -26,4 +26,18 @@ class TTexts {
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ';
   static const String onBoardingDescription3 =
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ';
+
+  // -- Sign In Texts
+  static const String signInTitle = 'Sign In';
+  static const String signInSubTitle = 'Hi! Welcome back, you’ve been missed';
+  static const String signInAccount = 'Don\'t have an account? *Sign Un';
+
+  // -- Authentication Form Text
+  static const String name = 'Name';
+  static const String email = 'Email';
+  static const String signIn = 'Sign In';
+  static const String signInWith = 'Or sign in with';
+  static const String password = 'Password';
+  static const String rememberMe = 'Remember Me';
+  static const String forgetPassword = 'Forgot Password?';
 }

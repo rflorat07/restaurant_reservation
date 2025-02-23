@@ -7,7 +7,10 @@ part 'onboarding_state.dart';
 class OnboardingCubit extends Cubit<OnboardingState> {
   OnboardingCubit()
     : super(
-        OnboardingState(currentPageIndex: 0, status: OnBoardingStatus.initial),
+        const OnboardingState(
+          currentPageIndex: 0,
+          status: OnBoardingStatus.initial,
+        ),
       );
 
   final PageController pageController = PageController();

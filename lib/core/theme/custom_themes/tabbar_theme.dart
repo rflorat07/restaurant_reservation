@@ -8,13 +8,13 @@ class TTabBarTheme {
   static TabBarTheme lightTabBarTheme = TabBarTheme(
     indicator: const BoxDecoration(
       border: Border(
-        bottom: BorderSide(width: TSizes.size4, color: TColors.green),
+        bottom: BorderSide(width: TSizes.size4, color: TColors.primary),
       ),
     ),
     indicatorSize: TabBarIndicatorSize.tab,
     dividerColor: Colors.black.withValues(alpha: 0.1),
     labelStyle: const TextStyle(
-      color: TColors.green,
+      color: TColors.primary,
       fontSize: TSizes.fontSize14,
       fontWeight: FontWeight.w500,
     ),
@@ -28,14 +28,14 @@ class TTabBarTheme {
   static TabBarTheme darkTabBarTheme = TabBarTheme(
     indicator: const BoxDecoration(
       border: Border(
-        bottom: BorderSide(width: TSizes.size4, color: TColors.green),
+        bottom: BorderSide(width: TSizes.size4, color: TColors.primary),
       ),
     ),
-    indicatorColor: TColors.green,
+    indicatorColor: TColors.primary,
     indicatorSize: TabBarIndicatorSize.tab,
     dividerColor: Colors.black.withValues(alpha: 0.1),
     labelStyle: const TextStyle(
-      color: TColors.green,
+      color: TColors.primary,
       fontSize: TSizes.fontSize14,
       fontWeight: FontWeight.w500,
     ),

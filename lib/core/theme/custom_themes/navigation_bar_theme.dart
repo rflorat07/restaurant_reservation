@@ -15,7 +15,7 @@ class TNavigationBarTheme {
         labelTextStyle: WidgetStateProperty.resolveWith((states) {
           return (states.contains(WidgetState.selected))
               ? const TextStyle(
-                color: TColors.green,
+                color: TColors.primary,
                 fontSize: 10.0,
                 fontWeight: FontWeight.w500,
               )
@@ -40,7 +40,7 @@ class TNavigationBarTheme {
         labelTextStyle: WidgetStateProperty.resolveWith((states) {
           return (states.contains(WidgetState.selected))
               ? const TextStyle(
-                color: TColors.green,
+                color: TColors.primary,
                 fontSize: 10.0,
                 fontWeight: FontWeight.w500,
               )

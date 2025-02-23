@@ -28,7 +28,7 @@ class WelcomeScreen extends StatelessWidget {
             child: Column(
               spacing: TSizes.defaultSpace,
               children: [
-                TRichTextDescription(
+                const TRichTextDescription(
                   text: TTexts.welcomeTitle,
                   description: TTexts.welcomeSubTitle,
                 ),
@@ -37,13 +37,16 @@ class WelcomeScreen extends StatelessWidget {
                   onPressed:
                       () => AppNavigator.pushAndRemove(
                         context,
-                        OnboardingScreen(),
+                        const OnboardingScreen(),
                       ),
                 ),
                 TRichTextTap(
                   text: TTexts.welcomeSignIn,
                   onTap:
-                      () => AppNavigator.pushAndRemove(context, SignInScreen()),
+                      () => AppNavigator.pushAndRemove(
+                        context,
+                        const SignInScreen(),
+                      ),
                 ),
               ],
             ),

@@ -14,13 +14,13 @@ class OnboardingScreen extends StatelessWidget {
     return Scaffold(
       appBar: OnBoardingSkip(
         onPressed: () {
-          AppNavigator.pushAndRemove(context, SignInScreen());
+          AppNavigator.pushAndRemove(context, const SignInScreen());
         },
       ),
       backgroundColor: TColors.quinary,
       body: BlocProvider(
         create: (context) => OnboardingCubit(),
-        child: OnboardingPage(),
+        child: const OnboardingPage(),
       ),
     );
   }
@@ -34,7 +34,7 @@ class OnboardingPage extends StatelessWidget {
     return BlocListener<OnboardingCubit, OnboardingState>(
       listener: (context, state) {
         if (state.status == OnBoardingStatus.completed) {
-          AppNavigator.pushAndRemove(context, SignInScreen());
+          AppNavigator.pushAndRemove(context, const SignInScreen());
         }
       },
       child: Column(
@@ -47,7 +47,7 @@ class OnboardingPage extends StatelessWidget {
                       .read<OnboardingCubit>()
                       .updatePageIndicator(index),
               physics: const ClampingScrollPhysics(),
-              children: [
+              children: const [
                 OnBoardingPage(
                   title: TTexts.onBoardingTitle1,
                   description: TTexts.onBoardingDescription1,

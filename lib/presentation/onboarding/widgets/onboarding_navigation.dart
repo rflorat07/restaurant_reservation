@@ -15,18 +15,18 @@ class OnBoardingNavigation extends StatelessWidget {
         bottom: TDeviceUtils.getBottomNavigationBarHeight(),
       ),
       color: TColors.white,
-      child: Row(
+      child: const Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           /// OnBoarding Back Button
-          const OnBoardingBackButton(),
+          OnBoardingBackButton(),
 
           /// Dot Navigation SmoothPageIndicator
-          const OnBoardingDotNavigation(),
+          OnBoardingDotNavigation(),
 
           /// OnBoarding Next Button
-          const OnBoardingNextButton(),
+          OnBoardingNextButton(),
         ],
       ),
     );

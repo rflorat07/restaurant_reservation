@@ -11,7 +11,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: TAppTheme.lightTheme,
-      home: WelcomeScreen(),
+      home: const WelcomeScreen(),
     );
   }
 }

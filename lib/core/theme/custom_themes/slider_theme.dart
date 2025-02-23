@@ -7,10 +7,10 @@ class TSliderThemeData {
 
   static SliderThemeData lightSliderThemeData = SliderThemeData(
     trackHeight: TSizes.size6,
-    thumbColor: TColors.green,
-    activeTrackColor: TColors.green,
+    thumbColor: TColors.primary,
+    activeTrackColor: TColors.primary,
     inactiveTrackColor: TColors.lightSilver,
-    activeTickMarkColor: TColors.green,
+    activeTickMarkColor: TColors.primary,
     secondaryActiveTrackColor: TColors.lightSilver,
     overlayShape: SliderComponentShape.noThumb,
     showValueIndicator: ShowValueIndicator.always,
@@ -18,10 +18,10 @@ class TSliderThemeData {
 
   static SliderThemeData darkSliderThemeData = SliderThemeData(
     trackHeight: TSizes.size6,
-    thumbColor: TColors.green,
-    activeTrackColor: TColors.green,
+    thumbColor: TColors.primary,
+    activeTrackColor: TColors.primary,
     inactiveTrackColor: TColors.lightSilver,
-    activeTickMarkColor: TColors.green,
+    activeTickMarkColor: TColors.primary,
     secondaryActiveTrackColor: TColors.lightSilver,
     overlayShape: SliderComponentShape.noThumb,
     showValueIndicator: ShowValueIndicator.always,
@@ -30,8 +30,8 @@ class TSliderThemeData {
   /* static SfRangeSliderThemeData lightSfRangeSliderThemeData =
       SfRangeSliderThemeData(
         inactiveTrackHeight: TSizes.size6,
-        thumbColor: TColors.green,
-        activeTrackColor: TColors.green,
+        thumbColor: TColors.primary,
+        activeTrackColor: TColors.primary,
         thumbRadius: 12.0,
         inactiveTrackColor: TColors.lightSilver,
         thumbStrokeWidth: 3,
@@ -51,8 +51,8 @@ class TSliderThemeData {
   /* static SfRangeSliderThemeData darkSfRangeSliderThemeData =
       SfRangeSliderThemeData(
         inactiveTrackHeight: TSizes.size6,
-        thumbColor: TColors.green,
-        activeTrackColor: TColors.green,
+        thumbColor: TColors.primary,
+        activeTrackColor: TColors.primary,
         thumbRadius: 12.0,
         inactiveTrackColor: TColors.lightSilver,
         thumbStrokeWidth: 3,

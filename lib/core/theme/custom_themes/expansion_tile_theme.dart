@@ -7,9 +7,9 @@ class TExpansionTileTheme {
 
   static ExpansionTileThemeData lightExpansionTileThemeData =
       ExpansionTileThemeData(
-        textColor: TColors.green,
-        iconColor: TColors.green,
-        collapsedIconColor: TColors.green,
+        textColor: TColors.primary,
+        iconColor: TColors.primary,
+        collapsedIconColor: TColors.primary,
         tilePadding: const EdgeInsets.symmetric(horizontal: TSizes.size16),
         childrenPadding: const EdgeInsets.all(TSizes.size16),
         shape: RoundedRectangleBorder(
@@ -24,9 +24,9 @@ class TExpansionTileTheme {
 
   static ExpansionTileThemeData darkExpansionTileThemeData =
       ExpansionTileThemeData(
-        textColor: TColors.green,
-        iconColor: TColors.green,
-        collapsedIconColor: TColors.green,
+        textColor: TColors.primary,
+        iconColor: TColors.primary,
+        collapsedIconColor: TColors.primary,
         tilePadding: const EdgeInsets.symmetric(horizontal: TSizes.size16),
         childrenPadding: const EdgeInsets.all(TSizes.size16),
         shape: RoundedRectangleBorder(

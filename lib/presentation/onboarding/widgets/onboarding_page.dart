@@ -26,7 +26,7 @@ class OnBoardingPage extends StatelessWidget {
         Expanded(
           child: Container(
             color: TColors.white,
-            padding: EdgeInsets.symmetric(
+            padding: const EdgeInsets.symmetric(
               horizontal: TSizes.defaultSpace,
               vertical: TSizes.spaceBtwSections,
             ),
