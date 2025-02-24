@@ -12,7 +12,7 @@ class TBasicElevatedButton extends StatelessWidget {
 
   final String title;
   final Widget? content;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
