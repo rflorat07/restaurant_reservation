@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'core/theme/theme.dart';
-import 'presentation/welcome/screens/welcome.dart';
+import 'presentation/splash/screens/splash.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -11,7 +11,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: TAppTheme.lightTheme,
-      home: const WelcomeScreen(),
+      home: const SplashScreen(),
     );
   }
 }
