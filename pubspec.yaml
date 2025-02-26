@@ -12,6 +12,7 @@ dependencies:
 
   # Utility Packages
   flutter_svg: ^2.0.1
+  shared_preferences: ^2.5.2
   cached_network_image: ^3.4.1
   smooth_page_indicator: ^1.2.0+3
 

@@ -30,7 +30,7 @@ class TTexts {
   // -- Sign In Texts
   static const String signInTitle = 'Sign In';
   static const String signInSubTitle = 'Hi! Welcome back, you’ve been missed';
-  static const String signInAccount = 'Don\'t have an account? *Sign Un';
+  static const String signInAccount = 'Don\'t have an account? *Sign Up';
 
   // -- Authentication Form Text
   static const String name = 'Name';
