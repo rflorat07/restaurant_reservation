@@ -5,20 +5,23 @@ import '../../../core/constants/constants.dart';
 class TBasicElevatedButton extends StatelessWidget {
   const TBasicElevatedButton({
     required this.onPressed,
-    this.title = '',
-    this.content,
     super.key,
+    this.content,
+    this.margin,
+    this.title = '',
   });
 
   final String title;
   final Widget? content;
   final VoidCallback? onPressed;
+  final EdgeInsetsGeometry? margin;
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       width: double.infinity,
       height: TSizes.size48,
+      margin: margin,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(padding: EdgeInsets.zero),
         onPressed: onPressed,

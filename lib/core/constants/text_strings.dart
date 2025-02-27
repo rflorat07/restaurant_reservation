@@ -32,11 +32,22 @@ class TTexts {
   static const String signInSubTitle = 'Hi! Welcome back, you’ve been missed';
   static const String signInAccount = 'Don\'t have an account? *Sign Up';
 
+  // -- Create Account Texts
+  static const String createAccountTitle = 'Create Account';
+  static const String createAccountSubTitle =
+      'Fill your information below or register \n with your social account.';
+  static const String createAccountSignIn =
+      'Already  have an account? *Sign In';
+  static const String createAccountAgreeTerms =
+      'Agree with *Terms & Conditions';
+
   // -- Authentication Form Text
   static const String name = 'Name';
   static const String email = 'Email';
   static const String signIn = 'Sign In';
+  static const String signUp = 'Sign Up';
   static const String signInWith = 'Or sign in with';
+  static const String signUpWith = 'Or sign up with';
   static const String password = 'Password';
   static const String rememberMe = 'Remember Me';
   static const String forgetPassword = 'Forgot Password?';

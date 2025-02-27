@@ -17,9 +17,9 @@ class SignInForm extends StatelessWidget {
       create: (context) => SignInCubit(),
       child: BlocConsumer<SignInCubit, SignInState>(
         listener: (context, state) {
-          if (state.status == FormSubmissionStatus.success) {
+          if (state.status == TFormStatus.success) {
             // AppNavigator.pushReplacement(context, HomeScreen());
-          } else if (state.status == FormSubmissionStatus.failure) {
+          } else if (state.status == TFormStatus.failure) {
             AppSnackbar.show(context, message: state.errorMessage);
           }
         },

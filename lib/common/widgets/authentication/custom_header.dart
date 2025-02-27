@@ -8,7 +8,7 @@ class TCustomHeader extends StatelessWidget {
     this.info = '',
     required this.title,
     required this.subTitle,
-    this.padding = const EdgeInsets.only(top: 0.0),
+    this.padding = const EdgeInsets.only(top: TSizes.size32),
   });
 
   final EdgeInsetsGeometry padding;

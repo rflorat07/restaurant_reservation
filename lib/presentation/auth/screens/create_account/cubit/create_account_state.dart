@@ -1,45 +1,50 @@
-part of 'sign_in_cubit.dart';
+part of 'create_account_cubit.dart';
 
-class SignInState extends Equatable {
-  const SignInState({
+class CreateAccountState extends Equatable {
+  const CreateAccountState({
+    this.name = '',
     this.email = '',
     this.password = '',
     this.obscureText = true,
-    this.rememberMe = false,
+    this.privacyPolicy = false,
     this.errorMessage = '',
     this.status = TFormStatus.initial,
   });
 
+  final String name;
   final String email;
   final String password;
   final bool obscureText;
-  final bool rememberMe;
+  final bool privacyPolicy;
   final String errorMessage;
   final TFormStatus status;
 
   @override
   List<Object> get props => [
+    name,
     email,
     password,
     obscureText,
-    rememberMe,
+    privacyPolicy,
     status,
     errorMessage,
   ];
 
-  SignInState copyWith({
+  CreateAccountState copyWith({
+    String? name,
     String? email,
     String? password,
     bool? obscureText,
-    bool? rememberMe,
+    bool? privacyPolicy,
     String? errorMessage,
     TFormStatus? status,
   }) {
-    return SignInState(
+    return CreateAccountState(
+      name: name ?? this.name,
       email: email ?? this.email,
       password: password ?? this.password,
       obscureText: obscureText ?? this.obscureText,
-      rememberMe: rememberMe ?? this.rememberMe,
+      privacyPolicy: privacyPolicy ?? this.privacyPolicy,
       status: status ?? this.status,
       errorMessage: errorMessage ?? this.errorMessage,
     );

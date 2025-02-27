@@ -23,7 +23,7 @@ class TRichTextTap extends StatelessWidget {
       color: TColors.primary,
       decoration: TextDecoration.underline,
       decorationColor: TColors.primary,
-      fontWeight: FontWeight.w500,
+      fontWeight: FontWeight.w600,
       fontSize: fontSize,
     );
 
@@ -31,9 +31,10 @@ class TRichTextTap extends StatelessWidget {
       textAlign: TextAlign.center,
       text: TextSpan(
         text: richText.isNotEmpty ? richText[0] : null,
-        style: Theme.of(
-          context,
-        ).textTheme.titleSmall!.copyWith(fontSize: fontSize),
+        style: Theme.of(context).textTheme.titleSmall!.copyWith(
+          fontSize: fontSize,
+          fontWeight: FontWeight.w500,
+        ),
         children: <TextSpan>[
           TextSpan(
             text: richText.length > 1 ? richText[1] : null,
