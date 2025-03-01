@@ -1,3 +1,4 @@
+export 'appbar/appbar.dart';
 export 'authentication/authentication.dart';
 export 'button/button.dart';
 export 'form/custom_text_field.dart';

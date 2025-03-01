@@ -1,6 +1,19 @@
 class TTexts {
   TTexts._();
 
+  // -- CTA
+  static const String cancel = 'Cancel';
+  static const String update = 'Update';
+  static const String apply = 'Apply';
+  static const String yesRemove = 'Yes, Remove';
+  static const String yesAdd = 'Yes, Add';
+  static const String eReceipt = 'E-Receipt';
+  static const String ctaContinue = 'Continue';
+  static const String yesLogout = 'Yes, Logout';
+  static const String saveAddress = 'Save address';
+  static const String confirmPayment = 'Confirm Payment';
+  static const String addPphoto = 'add photo';
+
   // -- Splash Texts
   static const String splashTitle = 'Table Reservation';
 
@@ -40,6 +53,17 @@ class TTexts {
       'Already  have an account? *Sign In';
   static const String createAccountAgreeTerms =
       'Agree with *Terms & Conditions';
+
+  // -- Verify Email Texts
+  static const String verifyEmailTitle = 'Verify Your Email';
+  static const String verifyEmailSubTitle =
+      'We have sent a verification code to your email address';
+  static const String verifyEmailResend = 'Resend Code';
+  static const String sendEmailInfo =
+      'Just click on the link in that email to complete your signup. If you don\'t see it, you may need to check your spam folder.';
+  static const String verifyEmaiErrorInfo =
+      'Still can\'t find the email? No problem';
+  static const String resendEmail = 'Resend Verification Email';
 
   // -- Authentication Form Text
   static const String name = 'Name';

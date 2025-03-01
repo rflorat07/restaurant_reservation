@@ -47,7 +47,7 @@ class CreateAccountCubit extends Cubit<CreateAccountState> {
 
     await Future.delayed(const Duration(seconds: 1));
 
-    if (state.name == 'utente' && state.password == 'password') {
+    if (state.name.isNotEmpty) {
       emit(state.copyWith(status: TFormStatus.success));
     } else {
       emit(

@@ -4,6 +4,7 @@ import 'package:iconsax_plus/iconsax_plus.dart';
 
 import '../../../../../common/common.dart';
 import '../../../../../core/core.dart';
+import '../../email_verification/widgets/email_verification.dart';
 import '../cubit/create_account_cubit.dart';
 import 'terms_conditions_checkbox.dart';
 
@@ -19,7 +20,10 @@ class CreateAccountForm extends StatelessWidget {
       child: BlocConsumer<CreateAccountCubit, CreateAccountState>(
         listener: (context, state) {
           if (state.status == TFormStatus.success) {
-            // AppNavigator.pushReplacement(context, HomeScreen());
+            AppNavigator.pushReplacement(
+              context,
+              VerifyEmailScreen(email: state.email),
+            );
           } else if (state.status == TFormStatus.failure) {
             AppSnackbar.show(context, message: state.errorMessage);
           }
@@ -37,8 +41,7 @@ class CreateAccountForm extends StatelessWidget {
                   /// Name
                   TCustomTextFormField(
                     label: TTexts.name,
-                    onChanged:
-                        (value) => createAccountCubit.emailChanged(value),
+                    onChanged: (value) => createAccountCubit.nameChanged(value),
                     validator:
                         (value) =>
                             TValidators.validateEmptyText(TTexts.name, value),
