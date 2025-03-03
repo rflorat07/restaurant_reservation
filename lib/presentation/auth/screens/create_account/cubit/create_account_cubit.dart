@@ -2,13 +2,18 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
 import '../../../../../common/common.dart';
+import '../../../../../core/core.dart';
+import '../../../../../data/repositories/authentication.repository.dart';
 
 part 'create_account_state.dart';
 
 class CreateAccountCubit extends Cubit<CreateAccountState> {
-  CreateAccountCubit() : super(const CreateAccountState());
+  CreateAccountCubit({
+    required AuthenticationRepository authenticationRepository,
+  }) : _authenticationRepository = authenticationRepository,
+       super(const CreateAccountState());
 
-  //final AuthenticationRepository _authenticationRepository;
+  final AuthenticationRepository _authenticationRepository;
 
   void nameChanged(String value) {
     emit(state.copyWith(name: value, status: TFormStatus.initial));
@@ -31,11 +36,11 @@ class CreateAccountCubit extends Cubit<CreateAccountState> {
     );
   }
 
-  void togglePrivacyPolicy() {
+  void toggleAgreeTerms() {
     {
       emit(
         state.copyWith(
-          privacyPolicy: !state.privacyPolicy,
+          agreeTerms: !state.agreeTerms,
           status: TFormStatus.initial,
         ),
       );
@@ -45,16 +50,33 @@ class CreateAccountCubit extends Cubit<CreateAccountState> {
   void createAccountSubmitted() async {
     emit(state.copyWith(status: TFormStatus.loading));
 
-    await Future.delayed(const Duration(seconds: 1));
-
-    if (state.name.isNotEmpty) {
-      emit(state.copyWith(status: TFormStatus.success));
-    } else {
+    if (!state.agreeTerms) {
       emit(
         state.copyWith(
           status: TFormStatus.failure,
-          errorMessage: 'Something went wrong!',
+          errorMessage: TTexts.acceptAgreeTermsErrorMessage,
         ),
+      );
+      return;
+    }
+
+    try {
+      final userCredential = await _authenticationRepository
+          .registerWithEmailAndPassword(state.email, state.password);
+
+      if (userCredential.user != null) {
+        emit(state.copyWith(status: TFormStatus.success));
+      } else {
+        emit(
+          state.copyWith(
+            status: TFormStatus.failure,
+            errorMessage: TTexts.failedMessage,
+          ),
+        );
+      }
+    } catch (e) {
+      emit(
+        state.copyWith(status: TFormStatus.failure, errorMessage: e.toString()),
       );
     }
   }

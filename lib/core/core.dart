@@ -1,5 +1,6 @@
 export 'constants/constants.dart';
 export 'device/device.dart';
+export 'exceptions/exceptions.dart';
 export 'helpers/helpers.dart';
 export 'locator/service_locator.dart';
 export 'navigator/app_navigator.dart';

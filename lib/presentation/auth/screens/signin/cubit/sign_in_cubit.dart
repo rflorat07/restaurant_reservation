@@ -2,13 +2,17 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
 import '../../../../../common/common.dart';
+import '../../../../../core/core.dart';
+import '../../../../../data/repositories/repositories.dart';
 
 part 'sign_in_state.dart';
 
 class SignInCubit extends Cubit<SignInState> {
-  SignInCubit() : super(const SignInState());
+  SignInCubit({required AuthenticationRepository authenticationRepository})
+    : _authenticationRepository = authenticationRepository,
+      super(const SignInState());
 
-  //final AuthenticationRepository _authenticationRepository;
+  final AuthenticationRepository _authenticationRepository;
 
   void emailChanged(String value) {
     emit(state.copyWith(email: value, status: TFormStatus.initial));
@@ -39,16 +43,26 @@ class SignInCubit extends Cubit<SignInState> {
   signInSubmitted() async {
     emit(state.copyWith(status: TFormStatus.loading));
 
-    await Future.delayed(const Duration(seconds: 2));
+    try {
+      final userCredential = await _authenticationRepository
+          .signInWithEmailAndPassword(
+            email: state.email,
+            password: state.password,
+          );
 
-    if (state.email == 'utente' && state.password == 'password') {
-      emit(state.copyWith(status: TFormStatus.success));
-    } else {
+      if (userCredential.user != null) {
+        emit(state.copyWith(status: TFormStatus.success));
+      } else {
+        emit(
+          state.copyWith(
+            status: TFormStatus.failure,
+            errorMessage: TTexts.failedMessage,
+          ),
+        );
+      }
+    } catch (e) {
       emit(
-        state.copyWith(
-          status: TFormStatus.failure,
-          errorMessage: 'Login fallito',
-        ),
+        state.copyWith(status: TFormStatus.failure, errorMessage: e.toString()),
       );
     }
   }

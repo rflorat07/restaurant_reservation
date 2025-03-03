@@ -53,6 +53,8 @@ class TTexts {
       'Already  have an account? *Sign In';
   static const String createAccountAgreeTerms =
       'Agree with *Terms & Conditions';
+  static const String acceptAgreeTermsErrorMessage =
+      'In Order to create account, you must have to read and accept the privacy policy & Terms of use.';
 
   // -- Verify Email Texts
   static const String verifyEmailTitle = 'Verify Your Email';
@@ -75,4 +77,5 @@ class TTexts {
   static const String password = 'Password';
   static const String rememberMe = 'Remember Me';
   static const String forgetPassword = 'Forgot Password?';
+  static const String failedMessage = 'Something went wrong. Please try again.';
 }

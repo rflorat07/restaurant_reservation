@@ -4,6 +4,8 @@ import 'package:iconsax_plus/iconsax_plus.dart';
 
 import '../../../../../common/common.dart';
 import '../../../../../core/core.dart';
+import '../../../../../data/repositories/repositories.dart';
+import '../../../../presentation.dart';
 import '../cubit/sign_in_cubit.dart';
 
 class SignInForm extends StatelessWidget {
@@ -14,13 +16,16 @@ class SignInForm extends StatelessWidget {
     GlobalKey<FormState> signInFormKey = GlobalKey<FormState>();
 
     return BlocProvider(
-      create: (context) => SignInCubit(),
+      create:
+          (context) => SignInCubit(
+            authenticationRepository: locator<AuthenticationRepository>(),
+          ),
       child: BlocConsumer<SignInCubit, SignInState>(
         listener: (context, state) {
           if (state.status == TFormStatus.success) {
-            // AppNavigator.pushReplacement(context, HomeScreen());
+            AppNavigator.pushReplacement(context, const HomeScreen());
           } else if (state.status == TFormStatus.failure) {
-            AppSnackbar.show(context, message: state.errorMessage);
+            AppSnackbar.error(context, state.errorMessage);
           }
         },
         builder: (context, state) {

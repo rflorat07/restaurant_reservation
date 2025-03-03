@@ -6,7 +6,7 @@ class CreateAccountState extends Equatable {
     this.email = '',
     this.password = '',
     this.obscureText = true,
-    this.privacyPolicy = false,
+    this.agreeTerms = false,
     this.errorMessage = '',
     this.status = TFormStatus.initial,
   });
@@ -15,7 +15,7 @@ class CreateAccountState extends Equatable {
   final String email;
   final String password;
   final bool obscureText;
-  final bool privacyPolicy;
+  final bool agreeTerms;
   final String errorMessage;
   final TFormStatus status;
 
@@ -25,7 +25,7 @@ class CreateAccountState extends Equatable {
     email,
     password,
     obscureText,
-    privacyPolicy,
+    agreeTerms,
     status,
     errorMessage,
   ];
@@ -35,7 +35,7 @@ class CreateAccountState extends Equatable {
     String? email,
     String? password,
     bool? obscureText,
-    bool? privacyPolicy,
+    bool? agreeTerms,
     String? errorMessage,
     TFormStatus? status,
   }) {
@@ -44,7 +44,7 @@ class CreateAccountState extends Equatable {
       email: email ?? this.email,
       password: password ?? this.password,
       obscureText: obscureText ?? this.obscureText,
-      privacyPolicy: privacyPolicy ?? this.privacyPolicy,
+      agreeTerms: agreeTerms ?? this.agreeTerms,
       status: status ?? this.status,
       errorMessage: errorMessage ?? this.errorMessage,
     );

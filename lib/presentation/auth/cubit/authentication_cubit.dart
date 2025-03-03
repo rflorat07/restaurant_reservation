@@ -9,18 +9,20 @@ part 'authentication_state.dart';
 class AuthenticationCubit extends Cubit<AuthenticationState> {
   AuthenticationCubit({
     required AuthenticationRepository authenticationRepository,
-    required SharedPreferencesService sharedPreferencesService,
+    required SharedPreferencesService? sharedPreferencesService,
   }) : _authenticationRepository = authenticationRepository,
-       _sharedPreferencesService = sharedPreferencesService,
+       //_sharedPreferencesService = sharedPreferencesService,
        super(AuthenticationInitial());
 
   final AuthenticationRepository _authenticationRepository;
-  final SharedPreferencesService _sharedPreferencesService;
+  // final SharedPreferencesService _sharedPreferencesService;
 
   Future<void> checkStatus() async {
     emit(AuthenticationLoading());
 
-    final currentUser = await _authenticationRepository.currentUser;
+    await Future.delayed(const Duration(seconds: 2));
+
+    final currentUser = _authenticationRepository.currentUser;
 
     if (currentUser != null) {
       emit(AuthenticationHome());

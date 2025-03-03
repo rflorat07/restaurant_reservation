@@ -8,11 +8,11 @@ import 'firebase_options.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  /// -- Initialize Service Locator
-  await serviceLocatorInit();
-
   /// -- Initialize Firebase
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
+  /// -- Initialize Service Locator
+  await serviceLocatorInit();
 
   runApp(const App());
 }

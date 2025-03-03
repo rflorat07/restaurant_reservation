@@ -4,6 +4,7 @@ import 'package:iconsax_plus/iconsax_plus.dart';
 
 import '../../../../../common/common.dart';
 import '../../../../../core/core.dart';
+import '../../../../../data/repositories/repositories.dart';
 import '../../email_verification/widgets/email_verification.dart';
 import '../cubit/create_account_cubit.dart';
 import 'terms_conditions_checkbox.dart';
@@ -16,7 +17,10 @@ class CreateAccountForm extends StatelessWidget {
     GlobalKey<FormState> signInFormKey = GlobalKey<FormState>();
 
     return BlocProvider(
-      create: (context) => CreateAccountCubit(),
+      create:
+          (context) => CreateAccountCubit(
+            authenticationRepository: locator<AuthenticationRepository>(),
+          ),
       child: BlocConsumer<CreateAccountCubit, CreateAccountState>(
         listener: (context, state) {
           if (state.status == TFormStatus.success) {
@@ -85,9 +89,8 @@ class CreateAccountForm extends StatelessWidget {
 
                   /// Agree with Terms & Condition
                   TTermsAndConditionsCheckbox(
-                    value: createAccountCubit.state.privacyPolicy,
-                    onChanged:
-                        (value) => createAccountCubit.togglePrivacyPolicy(),
+                    value: createAccountCubit.state.agreeTerms,
+                    onChanged: (value) => createAccountCubit.toggleAgreeTerms(),
                   ),
 
                   /// Sign In button
