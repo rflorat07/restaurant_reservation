@@ -66,6 +66,8 @@ class TTexts {
   static const String verifyEmaiErrorInfo =
       'Still can\'t find the email? No problem';
   static const String resendEmail = 'Resend Verification Email';
+  static const checkEmailVerification =
+      'Please Check your inbox and verify your email.';
 
   // -- Authentication Form Text
   static const String name = 'Name';

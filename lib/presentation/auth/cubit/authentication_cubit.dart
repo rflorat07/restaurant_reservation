@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
@@ -14,20 +16,23 @@ class AuthenticationCubit extends Cubit<AuthenticationState> {
        //_sharedPreferencesService = sharedPreferencesService,
        super(AuthenticationInitial());
 
+  StreamSubscription? _authStateSubscription;
   final AuthenticationRepository _authenticationRepository;
   // final SharedPreferencesService _sharedPreferencesService;
 
-  Future<void> checkStatus() async {
-    emit(AuthenticationLoading());
+  void checkAuthenticationStatus() {
+    _authStateSubscription = _authenticationRepository.authState.listen((user) {
+      if (user != null) {
+        emit(AuthenticationHome());
+      } else {
+        emit(AuthenticationSignIn());
+      }
+    });
+  }
 
-    await Future.delayed(const Duration(seconds: 2));
-
-    final currentUser = _authenticationRepository.currentUser;
-
-    if (currentUser != null) {
-      emit(AuthenticationHome());
-    } else {
-      emit(AuthenticationWelcome());
-    }
+  @override
+  Future<void> close() {
+    _authStateSubscription?.cancel();
+    return super.close();
   }
 }

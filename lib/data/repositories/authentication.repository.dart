@@ -10,7 +10,7 @@ class AuthenticationRepository {
   final FirebaseAuth _firebaseAuth;
 
   /// Get Authentication User Data
-  User? get currentUser => _firebaseAuth.currentUser;
+  Stream<User?> get authState => _firebaseAuth.authStateChanges();
 
   /// [EmailAuthentication] - LOGIN
   Future<UserCredential> signInWithEmailAndPassword({

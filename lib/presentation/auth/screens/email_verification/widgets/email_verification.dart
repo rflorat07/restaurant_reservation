@@ -4,6 +4,7 @@ import 'package:iconsax_plus/iconsax_plus.dart';
 
 import '../../../../../common/common.dart';
 import '../../../../../core/core.dart';
+import '../../../../../data/repositories/repositories.dart';
 import '../cubit/email_verification_cubit.dart';
 import 'email_verification_body.dart';
 
@@ -15,7 +16,10 @@ class VerifyEmailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => EmailVerificationCubit()..sendVerificationEmail(),
+      create:
+          (context) => EmailVerificationCubit(
+            authenticationRepository: locator<AuthenticationRepository>(),
+          )..sendVerificationEmail(),
       child: Scaffold(
         body: SafeArea(
           child: SingleChildScrollView(

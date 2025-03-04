@@ -18,6 +18,10 @@ class EmailVerificationBody extends StatelessWidget {
             context,
             const SignInScreen(),
           );
+        } else if (state is EmailVerificationSent) {
+          AppSnackbar.show(context, message: TTexts.checkEmailVerification);
+        } else if (state is EmailVerificationError) {
+          AppSnackbar.show(context, message: state.error);
         }
       },
       child: Column(
@@ -36,10 +40,10 @@ class EmailVerificationBody extends StatelessWidget {
           TBasicElevatedButton(
             title: TTexts.ctaContinue,
             onPressed:
-                () =>
-                    context
-                        .read<EmailVerificationCubit>()
-                        .checkEmailVerificationStatus(),
+                () => AppNavigator.pushAndRemoveWithoutAnimation(
+                  context,
+                  const SignInScreen(),
+                ),
           ),
 
           Text(

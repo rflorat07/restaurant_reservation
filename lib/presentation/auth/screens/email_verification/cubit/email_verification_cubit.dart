@@ -3,51 +3,43 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
+import '../../../../../data/repositories/repositories.dart';
+
 part 'email_verification_state.dart';
 
 class EmailVerificationCubit extends Cubit<EmailVerificationState> {
-  EmailVerificationCubit() : super(EmailVerificationInitial()) {
+  EmailVerificationCubit({
+    required AuthenticationRepository authenticationRepository,
+  }) : _authenticationRepository = authenticationRepository,
+       super(EmailVerificationInitial()) {
     listenForEmailVerification();
   }
 
-  StreamSubscription? _emailVerificationSubscription;
+  StreamSubscription? _authStateSubscription;
+  final AuthenticationRepository _authenticationRepository;
 
   /// Send Email verification Link
   Future<void> sendVerificationEmail() async {
     emit(EmailVerificationLoading());
-    /* try {
-      //final user = FirebaseAuth.instance.currentUser;
-      if (user != null && !user.emailVerified) {
-        await user.sendEmailVerification();
-        emit(EmailVerificationSent());
-      } else if (user != null && user.emailVerified) {
-        emit(EmailVerificationSuccess());
-      } else {
-        emit(const EmailVerificationError('Usuario no encontrado'));
-      }
+    try {
+      await _authenticationRepository.sendEmailVerification();
+      emit(EmailVerificationSent());
     } catch (e) {
       emit(EmailVerificationError(e.toString()));
-    } */
-  }
-
-  Future<void> checkEmailVerificationStatus() async {
-    emit(EmailVerificationLoading());
-    await Future.delayed(const Duration(seconds: 1));
-    emit(EmailVerificationSuccess());
+    }
   }
 
   void listenForEmailVerification() {
-    /* _emailVerificationSubscription = FirebaseAuth.instance.authStateChanges().listen((User? user) {
+    _authStateSubscription = _authenticationRepository.authState.listen((user) {
       if (user != null && user.emailVerified) {
-        // Email is verified, navigate to the login screen
         emit(EmailVerificationSuccess());
       }
-    }); */
+    });
   }
 
   @override
   Future<void> close() {
-    _emailVerificationSubscription?.cancel();
+    _authStateSubscription?.cancel();
     return super.close();
   }
 }

@@ -16,7 +16,7 @@ class App extends StatelessWidget {
           (context) => AuthenticationCubit(
             authenticationRepository: locator<AuthenticationRepository>(),
             sharedPreferencesService: locator<SharedPreferencesService>(),
-          )..checkStatus(),
+          )..checkAuthenticationStatus(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: TAppTheme.lightTheme,
