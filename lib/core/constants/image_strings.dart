@@ -18,4 +18,7 @@ class TImages {
   static const String google = 'assets/logos/google-icon.png';
   static const String facebook = 'assets/logos/facebook-icon.png';
   static const String paypal = 'assets/logos/paypal-icon.png';
+
+  // -- Location Screen
+  static const String location = 'assets/images/location-icon.png';
 }

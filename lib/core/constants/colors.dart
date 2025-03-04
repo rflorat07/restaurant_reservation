@@ -10,7 +10,7 @@ class TColors {
   static const Color quinary = Color(0xFFF6F6F6);
 
   // Text Colors
-  static const Color textPrimary = Color(0xFF242424);
+  static const Color textPrimary = Color(0xFF5B4CBD);
   static const Color textSecondary = Color(0xFF797979);
   static const Color textWhite = Color(0xFFF6F6F6);
 

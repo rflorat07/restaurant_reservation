@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'core/core.dart';
-import 'data/datasources/datasources.dart';
-import 'data/repositories/repositories.dart';
 import 'presentation/presentation.dart';
 
 class App extends StatelessWidget {
@@ -11,12 +9,17 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create:
-          (context) => AuthenticationCubit(
-            authenticationRepository: locator<AuthenticationRepository>(),
-            sharedPreferencesService: locator<SharedPreferencesService>(),
-          )..checkAuthenticationStatus(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<AuthenticationCubit>(
+          create:
+              (context) =>
+                  locator<AuthenticationCubit>()..checkAuthenticationStatus(),
+        ),
+        BlocProvider<LocationCubit>(
+          create: (context) => locator<LocationCubit>(),
+        ),
+      ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: TAppTheme.lightTheme,

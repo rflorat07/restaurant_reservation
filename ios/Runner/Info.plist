@@ -57,5 +57,9 @@
             <false/>
         </dict>
     </dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We need your location to find nearby restaurants</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Access to the location is required at all times</string>
 </dict>
 </plist>

@@ -80,4 +80,11 @@ class TTexts {
   static const String rememberMe = 'Remember Me';
   static const String forgetPassword = 'Forgot Password?';
   static const String failedMessage = 'Something went wrong. Please try again.';
+
+  // -- Location Screen
+  static const String locationTitle = 'What is Your Location?';
+  static const String locationSubTitle =
+      'We need your location to show available \nnearby restaurant.';
+  static const String locationButton = 'Allow Location Access';
+  static const String locationManualButton = 'Enter Location Manually';
 }

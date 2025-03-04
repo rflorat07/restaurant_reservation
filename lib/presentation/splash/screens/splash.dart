@@ -24,7 +24,7 @@ class SplashScreen extends StatelessWidget {
         } else if (state is AuthenticationHome) {
           AppNavigator.pushAndRemoveWithoutAnimation(
             context,
-            const HomeScreen(),
+            const LocationScreen(),
           );
         }
       },
