@@ -23,6 +23,8 @@ Future<void> serviceLocatorInit() async {
 
   locator.registerSingleton<LocationRepository>(LocationRepository());
 
+  locator.registerSingleton<RestaurantsRepository>(RestaurantsRepository());
+
   // Cubits
   locator.registerSingleton<AuthenticationCubit>(
     AuthenticationCubit(
@@ -33,5 +35,9 @@ Future<void> serviceLocatorInit() async {
 
   locator.registerSingleton<LocationCubit>(
     LocationCubit(locationRepository: locator<LocationRepository>()),
+  );
+
+  locator.registerSingleton<RestaurantsCubit>(
+    RestaurantsCubit(restaurantsRepository: locator<RestaurantsRepository>()),
   );
 }

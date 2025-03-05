@@ -17,7 +17,10 @@ class App extends StatelessWidget {
                   locator<AuthenticationCubit>()..checkAuthenticationStatus(),
         ),
         BlocProvider<LocationCubit>(
-          create: (context) => locator<LocationCubit>(),
+          create: (context) => locator<LocationCubit>()..fetchLocation(),
+        ),
+        BlocProvider<RestaurantsCubit>(
+          create: (context) => locator<RestaurantsCubit>(),
         ),
       ],
       child: MaterialApp(
