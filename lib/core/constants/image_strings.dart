@@ -21,4 +21,7 @@ class TImages {
 
   // -- Location Screen
   static const String location = 'assets/images/location-icon.png';
+
+  // -- Notification Screen
+  static const String notification = 'assets/images/notification-icon.png';
 }

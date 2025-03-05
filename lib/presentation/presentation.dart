@@ -4,6 +4,7 @@ export 'auth/screens/signin/signin.dart';
 export 'home/screens/home.dart';
 export 'location/cubit/location_cubit.dart';
 export 'location/screens/location.dart';
+export 'notification/screens/notification.dart';
 export 'onboarding/screens/onboarding.dart';
 export 'splash/screens/splash.dart';
 export 'welcome/screens/welcome.dart';

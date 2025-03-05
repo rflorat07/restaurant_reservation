@@ -87,4 +87,11 @@ class TTexts {
       'We need your location to show available \nnearby restaurant.';
   static const String locationButton = 'Allow Location Access';
   static const String locationManualButton = 'Enter Location Manually';
+
+  // -- Notification Screen
+  static const String notificationTitle = 'Enable Notifications Access';
+  static const String notificationSubTitle =
+      'Enable Notifications to receive real-time updates.';
+  static const String notificationButton = 'Allow Notification';
+  static const String notificationManualButton = 'Maybe Later';
 }

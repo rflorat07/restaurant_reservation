@@ -13,7 +13,7 @@ class LocationScreen extends StatelessWidget {
     return BlocListener<LocationCubit, LocationState>(
       listener: (context, state) {
         if (state is LocationLoaded) {
-          //AppNavigator.pop(context, result: state.position);
+          AppSnackbar.show(context, message: state.position.toString());
         } else if (state is LocationError) {
           AppSnackbar.error(context, state.message);
         }
