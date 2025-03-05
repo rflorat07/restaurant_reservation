@@ -35,38 +35,21 @@ class SignInForm extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.only(top: TSizes.size54),
               child: Column(
+                spacing: TSizes.size20,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   /// Email
-                  Text(
-                    TTexts.email,
-                    style: Theme.of(context).textTheme.labelLarge!.copyWith(
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-
-                  const SizedBox(height: TSizes.size6),
-
-                  TextFormField(
-                    autovalidateMode: AutovalidateMode.onUserInteraction,
+                  TCustomTextFormField(
+                    label: TTexts.email,
                     onChanged: (value) => signInCubit.emailChanged(value),
                     validator: (value) => TValidators.validateEmail(value),
+                    textInputAction: TextInputAction.next,
+                    keyboardType: TextInputType.emailAddress,
                   ),
-
-                  const SizedBox(height: TSizes.size20),
 
                   /// Password
-                  Text(
-                    TTexts.password,
-                    style: Theme.of(context).textTheme.labelLarge!.copyWith(
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-
-                  const SizedBox(height: TSizes.size6),
-
-                  TextFormField(
-                    autovalidateMode: AutovalidateMode.onUserInteraction,
+                  TCustomTextFormField(
+                    label: TTexts.password,
                     onChanged: (value) => signInCubit.passwordChanged(value),
                     validator: (value) => TValidators.validatePassword(value),
                     obscureText: signInCubit.state.obscureText,
@@ -80,6 +63,11 @@ class SignInForm extends StatelessWidget {
                         ),
                       ),
                     ),
+                    onFieldSubmitted: (_) {
+                      if (signInFormKey.currentState!.validate()) {
+                        signInCubit.signInSubmitted();
+                      }
+                    },
                   ),
 
                   /// Remember Me & Forget Password
@@ -124,8 +112,6 @@ class SignInForm extends StatelessWidget {
                     ],
                   ),
 
-                  const SizedBox(height: TSizes.spaceBtwSections),
-
                   /// Sign In button
                   TBasicElevatedButton(
                     onPressed: () {
@@ -136,7 +122,7 @@ class SignInForm extends StatelessWidget {
                     title: TTexts.signIn,
                   ),
 
-                  const SizedBox(height: TSizes.size44),
+                  const SizedBox(height: TSizes.size20),
                 ],
               ),
             ),

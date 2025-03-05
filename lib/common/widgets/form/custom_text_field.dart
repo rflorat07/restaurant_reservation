@@ -39,14 +39,14 @@ class TCustomTextFormField extends StatelessWidget {
         const SizedBox(height: TSizes.size6),
 
         TextFormField(
-          autovalidateMode: AutovalidateMode.onUserInteraction,
           onChanged: onChanged,
           validator: validator,
           obscureText: obscureText,
           decoration: decoration,
+          keyboardType: keyboardType,
           textInputAction: textInputAction,
           onFieldSubmitted: onFieldSubmitted,
-          keyboardType: keyboardType,
+          autovalidateMode: AutovalidateMode.onUserInteraction,
         ),
       ],
     );
