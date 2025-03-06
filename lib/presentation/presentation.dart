@@ -5,6 +5,8 @@ export 'home/cubit/restaurants_cubit.dart';
 export 'home/screens/home.dart';
 export 'location/cubit/location_cubit.dart';
 export 'location/screens/location.dart';
+export 'navigation/cubit/navigation_menu_cubit.dart';
+export 'navigation/screens/navigation_menu.dart';
 export 'notification/screens/notification.dart';
 export 'onboarding/screens/onboarding.dart';
 export 'splash/screens/splash.dart';

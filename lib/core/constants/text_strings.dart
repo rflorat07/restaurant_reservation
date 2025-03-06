@@ -94,4 +94,10 @@ class TTexts {
       'Enable Notifications to receive real-time updates.';
   static const String notificationButton = 'Allow Notification';
   static const String notificationManualButton = 'Maybe Later';
+
+  // -- Tabs
+  static const String homeTab = 'Home';
+  static const String discoverTab = 'Discover';
+  static const String wishlistTab = 'Wishlist';
+  static const String profileTab = 'Profile';
 }

@@ -40,4 +40,6 @@ Future<void> serviceLocatorInit() async {
   locator.registerSingleton<RestaurantsCubit>(
     RestaurantsCubit(restaurantsRepository: locator<RestaurantsRepository>()),
   );
+
+  locator.registerSingleton<NavigationMenuCubit>(NavigationMenuCubit());
 }

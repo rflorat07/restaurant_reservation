@@ -22,10 +22,7 @@ class SplashScreen extends StatelessWidget {
             const SignInScreen(),
           );
         } else if (state is AuthenticationHome) {
-          AppNavigator.pushAndRemoveWithoutAnimation(
-            context,
-            const HomeScreen(),
-          );
+          AppNavigator.pushAndRemoveWithoutAnimation(context, NavigationMenu());
         }
       },
       child: Scaffold(

@@ -22,6 +22,9 @@ class App extends StatelessWidget {
         BlocProvider<RestaurantsCubit>(
           create: (context) => locator<RestaurantsCubit>(),
         ),
+        BlocProvider<NavigationMenuCubit>(
+          create: (context) => locator<NavigationMenuCubit>(),
+        ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

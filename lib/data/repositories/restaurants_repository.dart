@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class RestaurantsRepository {
-  final String apiKey = '';
+  final String apiKey = 'AIzaSyAvY494C6LyYvwqzmHUFCYcG0otVfpAMiw';
 
   Future<List<dynamic>> getNearbyRestaurants(double lat, double lng) async {
     final String url =
