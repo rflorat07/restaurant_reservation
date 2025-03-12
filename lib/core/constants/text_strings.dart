@@ -100,4 +100,10 @@ class TTexts {
   static const String discoverTab = 'Discover';
   static const String wishlistTab = 'Wishlist';
   static const String profileTab = 'Profile';
+
+  // -- Home Screen
+  static const String search = 'Search..';
+  static const String location = 'Location';
+  static const String seeAll = 'See All';
+  static const String specialOffers = 'Special Offers';
 }

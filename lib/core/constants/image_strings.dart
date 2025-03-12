@@ -24,4 +24,7 @@ class TImages {
 
   // -- Notification Screen
   static const String notification = 'assets/images/notification-icon.png';
+
+  // -- Home Screen
+  static const String homeHeader = 'assets/images/home-header.png';
 }

@@ -1,6 +1,10 @@
 export 'appbar/appbar.dart';
 export 'authentication/authentication.dart';
 export 'button/button.dart';
+export 'carousel/carousel_view.dart';
+export 'containers/rounded_container.dart';
 export 'form/custom_text_field.dart';
+export 'icons/t_circular_icon.dart';
 export 'snackbar/app_snackbar.dart';
+export 'special_offer/special_offer.dart';
 export 'text/text.dart';
