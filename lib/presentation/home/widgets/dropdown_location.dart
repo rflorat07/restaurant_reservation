@@ -33,7 +33,7 @@ class TDropdownlocation extends StatelessWidget {
                 // -- Location Icon
                 const Icon(
                   IconsaxPlusBold.location,
-                  color: TColors.yellow,
+                  color: TColors.secondary,
                   size: TSizes.appBarIconSize,
                 ),
 
@@ -54,7 +54,7 @@ class TDropdownlocation extends StatelessWidget {
                       padding: EdgeInsets.only(left: TSizes.size4),
                       child: Icon(
                         Icons.keyboard_arrow_down,
-                        color: TColors.yellow,
+                        color: TColors.secondary,
                       ),
                     ),
                     items: const [
