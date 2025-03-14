@@ -2,6 +2,7 @@ import 'package:get_it/get_it.dart';
 
 import '../../data/datasources/datasources.dart';
 import '../../data/repositories/repositories.dart';
+import '../../presentation/home/cubit/special_offer/special_offer_cubit.dart';
 import '../../presentation/presentation.dart';
 
 final locator = GetIt.instance;
@@ -42,4 +43,6 @@ Future<void> serviceLocatorInit() async {
   );
 
   locator.registerSingleton<NavigationMenuCubit>(NavigationMenuCubit());
+
+  locator.registerSingleton<SpecialOfferCubit>(SpecialOfferCubit());
 }

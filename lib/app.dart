@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'core/core.dart';
+import 'presentation/home/cubit/special_offer/special_offer_cubit.dart';
 import 'presentation/presentation.dart';
 
 class App extends StatelessWidget {
@@ -24,6 +25,9 @@ class App extends StatelessWidget {
         ),
         BlocProvider<NavigationMenuCubit>(
           create: (context) => locator<NavigationMenuCubit>(),
+        ),
+        BlocProvider<SpecialOfferCubit>(
+          create: (context) => locator<SpecialOfferCubit>(),
         ),
       ],
       child: MaterialApp(

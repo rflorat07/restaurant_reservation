@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
-import '../../../data/repositories/repositories.dart';
+import '../../../../data/repositories/repositories.dart';
 
 part 'restaurants_state.dart';
 

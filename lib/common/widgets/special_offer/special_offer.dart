@@ -20,6 +20,7 @@ class SpecialOfferCard extends StatelessWidget {
     return Container(
       height: height,
       padding: const EdgeInsets.all(TSizes.size13),
+      margin: const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(
