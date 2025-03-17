@@ -17,6 +17,15 @@ class TSpecialOfferCarousel extends StatelessWidget {
 
     return Column(
       children: [
+        /// Section Heading - Special Offers
+        TSectionHeading(
+          title: TTexts.specialOffers,
+          horizontal: TSizes.defaultSpace,
+          onPressed: () {},
+        ),
+
+        const SizedBox(height: TSizes.size8),
+
         // CarouselView
         CarouselSlider(
           carouselController: specialOfferCubit.carouselController,
@@ -37,7 +46,7 @@ class TSpecialOfferCarousel extends StatelessWidget {
                   .toList(),
         ),
 
-        const SizedBox(height: TSizes.defaultSpace / 2),
+        const SizedBox(height: TSizes.size12),
 
         // PageIndicator
         AnimatedSmoothIndicator(

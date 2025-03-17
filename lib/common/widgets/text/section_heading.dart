@@ -47,7 +47,6 @@ class TSectionHeading extends StatelessWidget {
             TextButton.icon(
               onPressed: onPressed,
               style: TextButton.styleFrom(
-                padding: EdgeInsets.zero,
                 minimumSize: Size.zero,
                 tapTargetSize: MaterialTapTargetSize.shrinkWrap,
               ),

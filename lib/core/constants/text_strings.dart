@@ -106,4 +106,5 @@ class TTexts {
   static const String location = 'Location';
   static const String seeAll = 'See All';
   static const String specialOffers = 'Special Offers';
+  static const String cuisines = 'Cuisines';
 }

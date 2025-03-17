@@ -27,4 +27,5 @@ class TImages {
 
   // -- Home Screen
   static const String homeHeader = 'assets/images/home-header.png';
+  static const String italianFood = 'assets/images/italian.png';
 }
