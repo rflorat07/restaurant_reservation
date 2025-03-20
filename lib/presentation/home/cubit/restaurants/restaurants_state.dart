@@ -13,7 +13,7 @@ final class RestaurantsLoading extends RestaurantsState {}
 
 final class RestaurantsLoaded extends RestaurantsState {
   const RestaurantsLoaded(this.restaurants);
-  final List<dynamic> restaurants;
+  final List<RestaurantModel> restaurants;
 
   @override
   List<Object> get props => [restaurants];

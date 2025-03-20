@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../core/core.dart';
 import '../widgets/cuisines_carousel.dart';
+import '../widgets/popular_restaurants.dart';
 import '../widgets/primary_header_container.dart';
 import '../widgets/special_offer_carousel.dart';
 
@@ -25,6 +26,9 @@ class HomeScreen extends StatelessWidget {
 
             /// Cuisines Carousel
             TCuisinesCarousel(),
+
+            /// Popular Restaurants
+            TPopularRestaurants(),
           ],
         ),
       ),

@@ -2,20 +2,32 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 
+import '../models/models.dart';
+
 class RestaurantsRepository {
   final String apiKey = 'AIzaSyAvY494C6LyYvwqzmHUFCYcG0otVfpAMiw';
 
-  Future<List<dynamic>> getNearbyRestaurants(double lat, double lng) async {
-    final String url =
-        'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=$lat,$lng&radius=1500&type=restaurant&key=$apiKey';
+  Future<List<RestaurantModel>> getNearbyRestaurants(
+    double lat,
+    double lng,
+  ) async {
+    try {
+      final String url =
+          'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=$lat,$lng&radius=1500&type=restaurant&key=$apiKey';
 
-    final response = await http.get(Uri.parse(url));
+      final response = await http.get(Uri.parse(url));
 
-    if (response.statusCode == 200) {
-      final data = json.decode(response.body);
-      return data['results'];
-    } else {
-      throw Exception('Error obteniendo restaurantes');
+      if (response.statusCode == 200) {
+        final Map<String, dynamic> jsonData = json.decode(response.body);
+        final List<dynamic> results = jsonData['results'];
+        return results
+            .map((restaurants) => RestaurantModel.fromJson(restaurants))
+            .toList();
+      } else {
+        throw Exception('Error obteniendo restaurantes');
+      }
+    } catch (e) {
+      return []; // Devuelve una lista vacía en caso de error
     }
   }
 

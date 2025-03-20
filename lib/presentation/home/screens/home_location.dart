@@ -38,9 +38,10 @@ class HomeScreen extends StatelessWidget {
                       itemBuilder: (context, index) {
                         final restaurant = restaurantState.restaurants[index];
                         // Obtener la URL de la imagen
+                        // Obtener la URL de la imagen
                         String? photoReference =
-                            restaurant['photos']?[0]['photo_reference'];
-                        String photoUrl = context
+                            restaurant.photos[0].photoReference;
+                        String photoRestaurantUrl = context
                             .read<RestaurantsCubit>()
                             .getPhotoUrl(photoReference);
 
@@ -48,15 +49,13 @@ class HomeScreen extends StatelessWidget {
                           margin: const EdgeInsets.all(10),
                           child: ListTile(
                             leading: Image.network(
-                              photoUrl,
+                              photoRestaurantUrl,
                               width: 100,
                               height: 100,
                               fit: BoxFit.cover,
                             ),
-                            title: Text(restaurant['name'] ?? 'Sin nombre'),
-                            subtitle: Text(
-                              restaurant['vicinity'] ?? 'Ubicación desconocida',
-                            ),
+                            title: Text(restaurant.name),
+                            subtitle: Text(restaurant.vicinity),
                           ),
                         );
                       },

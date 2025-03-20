@@ -1,6 +1,9 @@
+import 'dart:developer';
+
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
+import '../../../../data/models/models.dart';
 import '../../../../data/repositories/repositories.dart';
 
 part 'restaurants_state.dart';
@@ -21,6 +24,7 @@ class RestaurantsCubit extends Cubit<RestaurantsState> {
       );
       emit(RestaurantsLoaded(restaurants));
     } catch (e) {
+      log(e.toString());
       emit(const RestaurantsError('Error obteniendo restaurantes'));
     }
   }

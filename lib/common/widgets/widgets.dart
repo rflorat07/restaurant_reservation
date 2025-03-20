@@ -1,6 +1,7 @@
 export 'appbar/appbar.dart';
 export 'authentication/authentication.dart';
 export 'button/button.dart';
+export 'card/restaurant/card_restaurant.dart';
 export 'carousel/carousel_view.dart';
 export 'containers/rounded_container.dart';
 export 'form/custom_text_field.dart';

@@ -107,4 +107,5 @@ class TTexts {
   static const String seeAll = 'See All';
   static const String specialOffers = 'Special Offers';
   static const String cuisines = 'Cuisines';
+  static const String popularRestaurants = 'Popular Restaurants';
 }

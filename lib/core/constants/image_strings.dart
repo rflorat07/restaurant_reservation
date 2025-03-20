@@ -28,4 +28,6 @@ class TImages {
   // -- Home Screen
   static const String homeHeader = 'assets/images/home-header.png';
   static const String italianFood = 'assets/images/italian.png';
+  static const String backgroundOffer = 'assets/images/background_offer.png';
+  static const String italianRestaurant = 'assets/images/italian_food.png';
 }
